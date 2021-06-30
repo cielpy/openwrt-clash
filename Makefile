@@ -1,7 +1,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=clash
-PKG_VERSION:=0.16.3
+PKG_VERSION:=1.6.0
 PKG_MAINTAINER:=frainzy1477
 
 ifeq ($(ARCH),mipsel)
@@ -26,7 +26,7 @@ ifeq ($(ARCH),aarch64)
 endif
 
 
-PKG_SOURCE_URL:=https://github.com/frainzy1477/clash_dev/releases/download/v$(PKG_VERSION)/
+PKG_SOURCE_URL:=https://github.com/Dreamacro/clash/releases/download/v$(PKG_VERSION)/
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)
 PKG_HASH:=skip
 
@@ -36,13 +36,13 @@ define Package/$(PKG_NAME)
 	SECTION:=luci
 	CATEGORY:=LuCI
 	SUBMENU:=2. Clash
-	TITLE:=clash is a cross-platform proxy software
+	TITLE:=A rule-based tunnel in Go.
 	DEPENDS:=
-	URL:=https://github.com/frainzy1477/clash_dev
+	URL:=https://github.com/Dreamacro/clash/
 endef
 
 define Package/$(PKG_NAME)/description
-	clash is a cross-platform proxy software
+	A rule-based tunnel in Go.
 endef
 
 define Build/Prepare
