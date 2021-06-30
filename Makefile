@@ -7,22 +7,21 @@ PKG_MAINTAINER:=frainzy1477
 ifeq ($(ARCH),mipsel)
 	PKG_ARCH:=mipsle
 	PKG_SOURCE:=clash-linux-$(PKG_ARCH)-softfloat-v$(PKG_VERSION).gz
-endif
-ifeq ($(ARCH),mips)
+else ifeq ($(ARCH),mips)
 	PKG_ARCH:=mips
 	PKG_SOURCE:=clash-linux-$(PKG_ARCH)-softfloat-v$(PKG_VERSION).gz
-endif
-ifeq ($(ARCH),x86_64)
+else ifeq ($(ARCH),x86_64)
 	PKG_ARCH:=amd64
 	PKG_SOURCE:=clash-linux-$(PKG_ARCH)-v$(PKG_VERSION).gz
-endif
-ifeq ($(ARCH),arm)
+else ifeq ($(ARCH),arm)
 	PKG_ARCH:=armv7
 	PKG_SOURCE:=clash-linux-$(PKG_ARCH)-v$(PKG_VERSION).gz
-endif
-ifeq ($(ARCH),aarch64)
+else ifeq ($(ARCH),aarch64)
 	PKG_ARCH:=armv8
 	PKG_SOURCE:=clash-linux-$(PKG_ARCH)-v$(PKG_VERSION).gz
+else
+  PKG_SOURCE:=dummy
+  PKG_HASH:=skip
 endif
 
 
